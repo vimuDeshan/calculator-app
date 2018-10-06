@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         etn1 = (EditText) findViewById(R.id.num1);
-//        etn2 = (EditText) findViewById(R.id.num2);
+       etn2 = (EditText) findViewById(R.id.num2);
         addbtn = (Button) findViewById(R.id.add);
         subbtn = (Button) findViewById(R.id.sub);
         mulbtn = (Button) findViewById(R.id.mul);
@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         int a = Integer.valueOf(etn1.getText().toString());
+        int b = Integer.valueOf(etn2.getText().toString());
         Log.d("TAG", "onClick: "+a);
-        int b = 0;
+        
         int c = 0;
       //  etn1.setText(null);
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
 
             case R.id.add :
-                b = Integer.valueOf(etn1.getText().toString());
+               
                 etn1.setText("");
                  c = a + b;
                 break;
@@ -59,17 +60,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.sub :
                 etn1.setText(null);
 
-                b = Integer.valueOf(etn1.getText().toString());
+                
                 c = a - b; break;
 
             case R.id.mul :         etn1.setText(null);
 
-                b = Integer.valueOf(etn1.getText().toString());
+                
                 c = a * b; break;
 
             case R.id.div :        etn1.setText(null);
 
-                b = Integer.valueOf(etn1.getText().toString());
+            
                 c = a / b; break;
 
             case R.id.result : etn1.setText(String.valueOf(c));
